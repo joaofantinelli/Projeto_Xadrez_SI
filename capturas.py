@@ -6,7 +6,7 @@ from tabuleiro import posicao_valida
 
 def movimento_rei(tabuleiro, origem, destino):
     """
-    Realiza o movimento do rei e do roque
+    Realiza o movimento do rei e do ##roque
 
     Parâmetros:
         tabuleiro
@@ -23,19 +23,22 @@ def movimento_rei(tabuleiro, origem, destino):
     rei_branco = '♚'
     #MOVIMENTO PADRÃO: uma casa de cada vez em qualquer direção
     if casa_origem == peca in('♔', '♚'): 
-        if ((d_linha == -1) and (d_coluna in (-1, 0, 1)) and ((d_linha == 0) and (d_coluna in (-1, 1)) and ((d_linha == 1) and (d_coluna in (-1, 0, 1)): 
-            move_peca = True
+        if d_linha <= 1 and d_coluna <= 1: 
+            return True
+        else: 
+            return False
+            
     #MOVIMENTO ROQUE: torre protege o rei SE rei e torre estiver na posição inicial e SE o rei andar duas casas na direção da torre
-    if rei_preto == casa_origem[0][4] and torre == casa_origem[0][0]: #roque grande
-        if rei_preto == (l_destino == 0 and c_destino == 2):
-            torre_protege = casa_origem[0][0]
-            casa_destino[0][3] = torre_protege
-            casa_origem[0][0] = ' '
-    elif rei_branco == casa_origem[7][4] and torre == casa_origem[7][7]: #roque pequeno
-        if rei_branco == (l_destino == 7] and c_destino == 5):
-            torre_protege = casa_origem[7][7]:
-            casa_destino[7][5] = torre_protege
-            casa_origem[7][7] = ' '
+    #if rei_preto == casa_origem[0][4] and torre == casa_origem[0][0]: #roque grande
+    #    if rei_preto == (l_destino == 0 and c_destino == 2):
+    #        torre_protege = casa_origem[0][0]
+    #        casa_destino[0][3] = torre_protege
+    #        casa_origem[0][0] = ' '
+    #elif rei_branco == casa_origem[7][4] and torre == casa_origem[7][7]: #roque pequeno
+    #    if rei_branco == (l_destino == 7] and c_destino == 5):
+     #       torre_protege = casa_origem[7][7]:
+      #      casa_destino[7][5] = torre_protege
+       #     casa_origem[7][7] = ' '
         
 def movimento_cavalo(tabuleiro, origem, destino):
     """
